@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+  <name>jboss-jaxws-addressing-service</name>
+  <comment>jaxws-addressing: Working example of the web service discussed in section,
+      &quot;Enable Web Services Addressing (WS-Addressing)&quot; of the &quot;JBoss Development Application Platform Development Guide&quot;. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

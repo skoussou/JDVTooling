@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sec="http://cxf.apache.org/configuration/security"
+    xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+    xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+    xsi:schemaLocation="http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://cxf.apache.org/configuration/security http://cxf.apache.org/schemas/configuration/security.xsd">
+
+    <http-conf:conduit name="*.http-conduit">
+<!-- WARNING ! disableCNcheck=true should NOT be used in production disableCNcheck="true"  -->
+
+        <http-conf:client ConnectionTimeout="120000" ReceiveTimeout="240000"/>
+        <http-conf:tlsClientParameters disableCNCheck="true" secureSocketProtocol="SSL"  >
+          <sec:trustManagers>
+            <sec:keyStore type="JKS" password="mypass" file="../standalone/configuration/client.jks"/>
+          </sec:trustManagers>
+	  <sec:keyManagers keyPassword="sslworkshop">
+            <sec:keyStore type="JKS" password="sslworkshop" file="../standalone/configuration/clientauth_ks.jks"/>
+          </sec:keyManagers>
+        </http-conf:tlsClientParameters>
+    </http-conf:conduit>
+</beans>
