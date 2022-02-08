@@ -47,6 +47,7 @@ To do it add a "SSL HTTP/1.1 Connector" entry in standalone/configuration/ stand
 
 3. Configure SSL to be required on the WEB Service by setting CONFIDENTIAL transport-guarantee
 
+---	
 	  <security-constraint>
 	    <web-resource-collection>
 	      <web-resource-name>AddressingService</web-resource-name>
@@ -64,7 +65,7 @@ To do it add a "SSL HTTP/1.1 Connector" entry in standalone/configuration/ stand
 	      <role-name>STSClient</role-name>
 	    </auth-constraint-->
 	  </security-constraint>
-
+---
 
 4. Import a Server Certificate to the Client Truststore
 
@@ -78,7 +79,7 @@ b) Deliver the Server Certificate to the Client
 - Copy generated on the previous step file <server.cer> to the client location.
 - Create the Client Truststore and Import the Server Certificate to the Client Truststore
 
-	
+---	
 	[stkousso@stkousso helloworld-ws-ssl]$ keytool -import -v -trustcacerts -alias helloworldkey -keystore client.jks -storepass mypass -keypass sslworkshop -file server.cer 
 	Owner: CN=redhat.com, OU=RedHat, O=RedHat, L=Farnborough, ST=Hampshire, C=UK
 	Issuer: CN=redhat.com, OU=RedHat, O=RedHat, L=Farnborough, ST=Hampshire, C=UK
@@ -104,7 +105,8 @@ b) Deliver the Server Certificate to the Client
 	Trust this certificate? [no]:  yes
 	Certificate was added to keystore
 	[Storing client.jks]
-
+---
+										       
 5. Create client and use Client Truststore
 
 - On eclipse add to "Run Configurations" for the main in SSLClient the following JVM settings
