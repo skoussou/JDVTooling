@@ -5,6 +5,7 @@ See: http://www.examclouds.com/publications/ssl-in-soap-web-service.jsp
 1. Generate a Keystore
 
 First we need generate a secret key/certificate and store it in a "key store" file. It can be done with keytool utility. The password for encryption is "clouds".
+
 	[stkousso@stkousso helloworld-ws-ssl]$ keytool -genkey -alias helloworldkey -keyalg RSA -keystore ssl.keystore
 	Enter keystore password:  sslworkshop
 	Re-enter new password: sslworkshop
