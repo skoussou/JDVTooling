@@ -259,7 +259,6 @@ The same as in 1.6. The only change that should be done is adding client keystor
 
 	    <http-conf:conduit name="*.http-conduit">
 	<!-- WARNING ! disableCNcheck=true should NOT be used in production disableCNcheck="true"  -->
-
 		<http-conf:client ConnectionTimeout="120000" ReceiveTimeout="240000"/>
 		<http-conf:tlsClientParameters disableCNCheck="true" secureSocketProtocol="SSL"  >
 		  <sec:trustManagers>
@@ -275,8 +274,10 @@ The same as in 1.6. The only change that should be done is adding client keystor
 
 9. Create client and use Client Truststore
 
+----	
 	-Djavax.net.ssl.trustStore=client_ts.jks
 	-Djavax.net.ssl.trustStorePassword=mypass
 	-Djavax.net.ssl.keyStore=clientauth_ks.jks
 	-Djavax.net.ssl.keyStorePassword=sslworkshop
 	-Djavax.net.debug=all
+----
