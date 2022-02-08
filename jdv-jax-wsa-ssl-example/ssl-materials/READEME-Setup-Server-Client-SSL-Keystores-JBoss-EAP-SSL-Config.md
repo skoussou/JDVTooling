@@ -111,10 +111,11 @@ b) Deliver the Server Certificate to the Client
 
 - On eclipse add to "Run Configurations" for the main in SSLClient the following JVM settings
 
+----
 	-Djavax.net.ssl.trustStore=client_ts.jks
 	-Djavax.net.ssl.trustStorePassword=mypass
 	-Djavax.net.debug=all
-
+----
 
 6. CXF Clients can contain a ssl-jbossws-cxf.xml file
 
@@ -137,13 +138,14 @@ b) Deliver the Server Certificate to the Client
 
 - Configure TEIID client with this CXF configuration
 
+----	
 	batch
 	/subsystem=resource-adapters/resource-adapter=webservice/connection-definitions=wsDS:add(jndi-name=java:/wsDS, class-name=org.teiid.resource.adapter.ws.WSManagedConnectionFactory, enabled=true, use-java-context=true)
 	/subsystem=resource-adapters/resource-adapter=webservice/connection-definitions=wsDS/config-properties=ConfigFile:add(value=${jboss.server.home.dir}/standalone/configuration/xxx-jbossws-cxf.xml)
 	/subsystem=resource-adapters/resource-adapter=webservice/connection-definitions=wsDS/config-properties=ConfigName:add(value=port_x)
 	/subsystem=resource-adapters/resource-adapter=webservice:activate
 	runbatch
-
+----
 
 7. Enable Client authentication (via certificate) on JBoss 
 
